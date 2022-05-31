@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float MovSpeed;
     public bool contacto = false;
 
+    public GameObject obstaculo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,13 +59,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter()
+    void OnCollisionEnter(Collision col)
     {
-        contacto = true;
+        if (col.gameObject.name == "Obstaculo" || col.gameObject.name == "Pared")
+        {
+            contacto = true;
+        }
     }
 
-    void OnCollisionExit()
+    void OnCollisionExit(Collision col)
     {
-        contacto = false;
+        if (col.gameObject.name == "Obstaculo")
+        {
+            contacto = false;
+        }
     }
 }

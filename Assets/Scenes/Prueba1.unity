@@ -343,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 8292224010955359122, guid: 1a19d16b6e1829a429db6ec55bd8ac90,
         type: 3}
       propertyPath: m_Name
-      value: ParedDerecha
+      value: Pared
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a19d16b6e1829a429db6ec55bd8ac90, type: 3}
@@ -504,7 +504,7 @@ PrefabInstance:
     - target: {fileID: 8292224010955359122, guid: 1a19d16b6e1829a429db6ec55bd8ac90,
         type: 3}
       propertyPath: m_Name
-      value: ParedFrente
+      value: Pared
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a19d16b6e1829a429db6ec55bd8ac90, type: 3}
@@ -578,7 +578,7 @@ PrefabInstance:
     - target: {fileID: 8292224010955359122, guid: 1a19d16b6e1829a429db6ec55bd8ac90,
         type: 3}
       propertyPath: m_Name
-      value: ParedIzquierda
+      value: Pared
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a19d16b6e1829a429db6ec55bd8ac90, type: 3}
@@ -689,6 +689,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovSpeed: 0.2
   contacto: 0
+  obstaculo: {fileID: 4782917619206162064, guid: 5964592701df7174a9eee8f9fed29b55,
+    type: 3}
 --- !u!54 &1411868487
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -849,7 +851,7 @@ PrefabInstance:
     - target: {fileID: 8292224010955359122, guid: 1a19d16b6e1829a429db6ec55bd8ac90,
         type: 3}
       propertyPath: m_Name
-      value: ParedAtras
+      value: Pared
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a19d16b6e1829a429db6ec55bd8ac90, type: 3}
