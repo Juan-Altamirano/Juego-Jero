@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float MovSpeed;
-    public bool contacto = false;
+    public bool contactoW = false;
+    public bool contactoA = false;
+    public bool contactoS = false;
+    public bool contactoD = false;
 
     public GameObject obstaculo;
 
@@ -20,41 +23,48 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (contacto) { }
+            if (contactoA) { }
 
-            else if (contacto == false)
+            else if (contactoA == false)
             {
                 transform.position += new Vector3(MovSpeed, 0, 0);
+                contactoA = true;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (contacto) { }
+            if (contactoD) { }
 
-            else if (contacto == false)
+            else if (contactoD == false)
             {
                 transform.position -= new Vector3(MovSpeed, 0, 0);
+                contactoD = true;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (contacto) { }
+            if (contactoW) { }
 
-            else if (contacto == false)
+            else if (contactoW == false)
             {
                 transform.position -= new Vector3(0, 0, MovSpeed);
+                contactoW = true;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (contacto) { }
+            if (contactoS) { }
 
-            else if (contacto == false)
+            else if (contactoS == false)
             {
-                transform.position += new Vector3(0, 0, MovSpeed);
+                while (contactoS)
+                {
+                    transform.position += new Vector3(0, 0, MovSpeed);
+                }
+                contactoS = true;
             }
         }
     }
@@ -63,15 +73,20 @@ public class PlayerController : MonoBehaviour
     {
         if (col.gameObject.name == "Obstaculo" || col.gameObject.name == "Pared")
         {
-            contacto = true;
+
         }
     }
 
     void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.name == "Obstaculo")
+        if (col.gameObject.name == "Obstaculo" || col.gameObject.name == "Pared")
         {
-            contacto = false;
+            
         }
+    }
+
+    void Movement()
+    {
+        
     }
 }
