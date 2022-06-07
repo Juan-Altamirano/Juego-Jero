@@ -5,88 +5,55 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float MovSpeed;
-    public bool contactoW = false;
-    public bool contactoA = false;
-    public bool contactoS = false;
-    public bool contactoD = false;
+    public Transform targetTR;
 
-    public GameObject obstaculo;
+    public Transform upTarget;
+    public Transform downTarget;
+    public Transform leftTarget;
+    public Transform rightTarget;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            if (contactoA) { }
+        var step = MovSpeed * Time.deltaTime;
 
-            else if (contactoA == false)
-            {
-                transform.position += new Vector3(MovSpeed, 0, 0);
-                contactoA = true;
-            }
+        //Si apretas W y existe un valor en la variable Transform upTarget, 
+        if (Input.GetKeyDown(KeyCode.W) && upTarget)
+        {
+            targetTR = upTarget;
+            downTarget = null;
+            leftTarget = null;
+            rightTarget = null;
+
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.S) && downTarget)
         {
-            if (contactoD) { }
+            targetTR = downTarget;
+            upTarget = null;
+            leftTarget = null;
+            rightTarget = null;
 
-            else if (contactoD == false)
-            {
-                transform.position -= new Vector3(MovSpeed, 0, 0);
-                contactoD = true;
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.A) && leftTarget)
         {
-            if (contactoW) { }
+            targetTR = leftTarget;
+            downTarget = null;
+            upTarget = null;
+            rightTarget = null;
 
-            else if (contactoW == false)
-            {
-                transform.position -= new Vector3(0, 0, MovSpeed);
-                contactoW = true;
-            }
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.D) && rightTarget)
         {
-            if (contactoS) { }
-
-            else if (contactoS == false)
-            {
-                while (contactoS)
-                {
-                    transform.position += new Vector3(0, 0, MovSpeed);
-                }
-                contactoS = true;
-            }
-        }
-    }
-
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.name == "Obstaculo" || col.gameObject.name == "Pared")
-        {
+            targetTR = rightTarget;
+            downTarget = null;
+            leftTarget = null;
+            upTarget = null;
 
         }
-    }
 
-    void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.name == "Obstaculo" || col.gameObject.name == "Pared")
-        {
-            
-        }
-    }
-
-    void Movement()
-    {
-        
+        //El MoveTowards me pide una posición inicial, una  posición final y una velocidad, en ese orden
+        transform.position = Vector3.MoveTowards(transform.position, targetTR.position, step);
     }
 }
