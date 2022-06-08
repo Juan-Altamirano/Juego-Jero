@@ -41,6 +41,8 @@ public class CameraBehavior : MonoBehaviour
         {
             transform.eulerAngles -= new Vector3(0, 2, 0);
         }
+
+        
     }
 
     void OnTriggerEnter(Collider col)
