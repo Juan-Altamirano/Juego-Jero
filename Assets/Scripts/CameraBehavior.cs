@@ -13,15 +13,18 @@ public class CameraBehavior : MonoBehaviour
     public Transform CurrentTgt;
 
     int grados;
+    float speed;
     // Start is called before the first frame update
     void Start()
     {
+        speed = 5;
         grados = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        var step = speed * Time.deltaTime;
         //Si el número de grados que rota es positivo, la cámara rota hacia 
         //la derecha, y si es negativo rota hacia la izquierda
         if (Input.GetKeyDown(KeyCode.K) && SigPos)
@@ -42,7 +45,7 @@ public class CameraBehavior : MonoBehaviour
             transform.eulerAngles -= new Vector3(0, 2, 0);
         }
 
-        
+        transform.position = Vector3.MoveTowards (transform.position, CurrentTgt.position, step);
     }
 
     void OnTriggerEnter(Collider col)

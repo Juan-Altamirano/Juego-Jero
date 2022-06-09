@@ -8,4 +8,6 @@ public class TargetManager : MonoBehaviour
     public Transform downTarget;
     public Transform rightTarget;
     public Transform leftTarget;
+
+    public 
 }
