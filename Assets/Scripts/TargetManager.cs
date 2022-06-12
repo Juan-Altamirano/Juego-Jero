@@ -9,5 +9,10 @@ public class TargetManager : MonoBehaviour
     public Transform rightTarget;
     public Transform leftTarget;
 
-    public 
+    public GameObject MovibleDer;
+    public GameObject MovibleIzq;
+    public GameObject MovibleFrente;
+    public GameObject MovibleDetras;
+
+    public bool PlayerPos;
 }

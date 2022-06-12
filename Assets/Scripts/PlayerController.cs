@@ -12,6 +12,11 @@ public class PlayerController : MonoBehaviour
     public Transform leftTarget;
     public Transform rightTarget;
 
+    public GameObject MovibleDer;
+    public GameObject MovibleIzq;
+    public GameObject MovibleFrente;
+    public GameObject MovibleDetras;
+
     void Update()
     {
         var step = MovSpeed * Time.deltaTime;
@@ -25,6 +30,11 @@ public class PlayerController : MonoBehaviour
             leftTarget = null;
             rightTarget = null;
 
+        }
+
+        else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
+        {
+            
         }
 
         if (Input.GetKeyDown(KeyCode.S) && downTarget)
@@ -70,6 +80,13 @@ public class PlayerController : MonoBehaviour
             downTarget = tm.downTarget;
             rightTarget = tm.rightTarget;
             leftTarget = tm.leftTarget;
+
+            MovibleDer = tm.MovibleDer;
+            MovibleIzq = tm.MovibleIzq;
+            MovibleFrente = tm.MovibleFrente;
+            MovibleDetras = tm.MovibleDetras;
+
+            tm.PlayerPos = !tm.PlayerPos;
         }
     }
 }
