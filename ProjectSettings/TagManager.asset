@@ -9,6 +9,7 @@ TagManager:
   - CamPos
   - Casilleron't
   - "Placa de presi\xF3n"
+  - Presionador
   layers:
   - Default
   - TransparentFX
