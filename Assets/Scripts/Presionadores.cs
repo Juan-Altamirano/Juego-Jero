@@ -23,7 +23,7 @@ public class Presionadores : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) && PosFrente)
+        if (Input.GetKeyDown(KeyCode.W) && PosFrente && CasPlyrPos)
         {
             NextPos = PosFrente;
             PosIzq = null;
@@ -31,7 +31,7 @@ public class Presionadores : MonoBehaviour
             PosDetras = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.A) && PosIzq)
+        if (Input.GetKeyDown(KeyCode.A) && PosIzq && CasPlyrPos)
         {
             NextPos = PosIzq;
             PosIzq = null;
@@ -39,7 +39,7 @@ public class Presionadores : MonoBehaviour
             PosDetras = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && PosDetras)
+        if (Input.GetKeyDown(KeyCode.S) && PosDetras && CasPlyrPos)
         {
             NextPos = PosDetras;
             PosIzq = null;
@@ -47,7 +47,7 @@ public class Presionadores : MonoBehaviour
             PosDetras = null;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) && PosDer)
+        if (Input.GetKeyDown(KeyCode.D) && PosDer && CasPlyrPos)
         {
             NextPos = PosDer;
             PosIzq = null;

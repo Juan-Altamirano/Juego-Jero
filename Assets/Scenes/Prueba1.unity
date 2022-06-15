@@ -475,6 +475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casillero 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3660114564705090603, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -553,7 +558,6 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   - component: {fileID: 534669908}
   m_Layer: 0
@@ -562,7 +566,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &534669903
 AudioListener:
   m_ObjectHideFlags: 0
@@ -627,21 +631,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 66, y: -180.00002, z: 0}
---- !u!114 &534669906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec8474a58d16a3846bbfef60f373862a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SigPos: {fileID: 0}
-  PrevPos: {fileID: 0}
-  CurrentTgt: {fileID: 0}
 --- !u!82 &534669907
 AudioSource:
   m_ObjectHideFlags: 0
@@ -653,10 +642,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -970,6 +959,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casillero 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3660114564705090603, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1199,6 +1193,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Casillero 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3660114564705090603, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1347,6 +1346,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Casillero 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3660114564705090603, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
         type: 3}

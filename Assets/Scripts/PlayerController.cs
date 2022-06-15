@@ -89,4 +89,11 @@ public class PlayerController : MonoBehaviour
             tm.PlayerPos = !tm.PlayerPos;
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        TargetManager tm = other.gameObject.GetComponent<TargetManager>();
+
+        tm.PlayerPos = !tm.PlayerPos;
+    }
 }
