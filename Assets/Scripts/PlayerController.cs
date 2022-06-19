@@ -12,10 +12,17 @@ public class PlayerController : MonoBehaviour
     public Transform leftTarget;
     public Transform rightTarget;
 
-    public GameObject MovibleDer;
-    public GameObject MovibleIzq;
-    public GameObject MovibleFrente;
-    public GameObject MovibleDetras;
+    public int CoinAmount;
+
+    //public GameObject MovibleDer;
+    //public GameObject MovibleIzq;
+    //public GameObject MovibleFrente;
+    //public GameObject MovibleDetras;
+
+    void Start()
+    {
+        CoinAmount = 0;
+    }
 
     void Update()
     {
@@ -32,10 +39,10 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
-        {
-            
-        }
+        //else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
+        //{
+
+        //}
 
         if (Input.GetKeyDown(KeyCode.S) && downTarget)
         {
@@ -68,7 +75,7 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetTR.position, step);
     }
 
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
         // Si el player se para encima de contra un objeto con el tag "Casillero", agarra los targets de ese casillero y se los guarda en los que se crearon al principio
@@ -81,19 +88,19 @@ public class PlayerController : MonoBehaviour
             rightTarget = tm.rightTarget;
             leftTarget = tm.leftTarget;
 
-            MovibleDer = tm.MovibleDer;
-            MovibleIzq = tm.MovibleIzq;
-            MovibleFrente = tm.MovibleFrente;
-            MovibleDetras = tm.MovibleDetras;
+            //MovibleDer = tm.MovibleDer;
+            //MovibleIzq = tm.MovibleIzq;
+            //MovibleFrente = tm.MovibleFrente;
+            //MovibleDetras = tm.MovibleDetras;
 
-            tm.PlayerPos = !tm.PlayerPos;
+            //tm.PlayerPos = !tm.PlayerPos;
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        TargetManager tm = other.gameObject.GetComponent<TargetManager>();
+    //void OnTriggerExit(Collider other) - Idea descartada
+    //{
+    //    TargetManager tm = other.gameObject.GetComponent<TargetManager>();
 
-        tm.PlayerPos = !tm.PlayerPos;
-    }
+    //    tm.PlayerPos = !tm.PlayerPos;
+    //}
 }

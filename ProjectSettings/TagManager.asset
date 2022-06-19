@@ -10,6 +10,7 @@ TagManager:
   - Casilleron't
   - "Placa de presi\xF3n"
   - Presionador
+  - Coin
   layers:
   - Default
   - TransparentFX
