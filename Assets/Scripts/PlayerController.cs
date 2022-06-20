@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public Transform rightTarget;
 
     public int CoinAmount;
+    AudioSource cling;
 
     //public GameObject MovibleDer;
     //public GameObject MovibleIzq;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         CoinAmount = 0;
+
+        cling = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -41,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
         //else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
         //{
-
+            
         //}
 
         if (Input.GetKeyDown(KeyCode.S) && downTarget)
@@ -94,6 +97,14 @@ public class PlayerController : MonoBehaviour
             //MovibleDetras = tm.MovibleDetras;
 
             //tm.PlayerPos = !tm.PlayerPos;
+        }
+    }
+
+    void OnCollisionEnter (Collision col)
+    {
+        if (col.gameObject.tag == "Coin")
+        {
+            cling.Play();
         }
     }
 
