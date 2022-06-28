@@ -31,7 +31,7 @@ public class CoinMan : MonoBehaviour
             {
                 clon = Instantiate(prefab);
                 //clon.transform.position = new Vector3(Random.Range(2.4f, 2.6f), 2, Random.Range(4.4f, 4.6f)); Esto solo me servía para una moneda, mientras que el de abajo me sirve para todas
-                clon.transform.position = new Vector3(Random.Range(Pos.x - 0.1f,Pos.x + 0.1f), 2, Random.Range(Pos.z - 0.1f, Pos.z + 0.1f));
+                clon.transform.position = new Vector3(Random.Range(Pos.x - 0.1f,Pos.x + 0.1f), 1.5f, Random.Range(Pos.z - 0.1f, Pos.z + 0.1f));
                 Destroy(clon, 1);
             }
         }

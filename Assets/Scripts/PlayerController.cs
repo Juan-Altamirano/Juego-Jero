@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     AudioSource cling;
     public int movs;
 
+
+
     //public GameObject MovibleDer;
     //public GameObject MovibleIzq;
     //public GameObject MovibleFrente;
@@ -35,55 +37,63 @@ public class PlayerController : MonoBehaviour
     {
         var step = MovSpeed * Time.deltaTime;
 
-        //Si apretas W y existe un valor en la variable Transform upTarget, iguala la posicion del casillero target al targetTR
-        //Así con cada dirección
-        if (Input.GetKeyDown(KeyCode.W) && upTarget)
+        if (movs >= 1)
         {
-            targetTR = upTarget;
-            downTarget = null;
-            leftTarget = null;
-            rightTarget = null;
+            //Si apretas W y existe un valor en la variable Transform upTarget, iguala la posicion del casillero target al targetTR
+            //Así con cada dirección
+            if (Input.GetKeyDown(KeyCode.W) && upTarget)
+            {
+                targetTR = upTarget;
+                downTarget = null;
+                leftTarget = null;
+                rightTarget = null;
 
-            CuentaDeMovs();
+                CuentaDeMovs();
+            }
+
+            //else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
+            //{
+
+            //}
+
+            if (Input.GetKeyDown(KeyCode.S) && downTarget)
+            {
+                targetTR = downTarget;
+                upTarget = null;
+                leftTarget = null;
+                rightTarget = null;
+
+                CuentaDeMovs();
+            }
+
+            if (Input.GetKeyDown(KeyCode.A) && leftTarget)
+            {
+                targetTR = leftTarget;
+                downTarget = null;
+                upTarget = null;
+                rightTarget = null;
+
+                CuentaDeMovs();
+            }
+
+            if (Input.GetKeyDown(KeyCode.D) && rightTarget)
+            {
+                targetTR = rightTarget;
+                downTarget = null;
+                leftTarget = null;
+                upTarget = null;
+
+                CuentaDeMovs();
+            }
+
+            //El MoveTowards me pide una posición inicial, una posición final y una velocidad, en ese orden
+            transform.position = Vector3.MoveTowards(transform.position, targetTR.position, step);
         }
 
-        //else if (Input.GetKeyDown(KeyCode.W) && MovibleFrente)
-        //{
+        else
+        {
             
-        //}
-
-        if (Input.GetKeyDown(KeyCode.S) && downTarget)
-        {
-            targetTR = downTarget;
-            upTarget = null;
-            leftTarget = null;
-            rightTarget = null;
-
-            CuentaDeMovs();
         }
-
-        if (Input.GetKeyDown(KeyCode.A) && leftTarget)
-        {
-            targetTR = leftTarget;
-            downTarget = null;
-            upTarget = null;
-            rightTarget = null;
-
-            CuentaDeMovs();
-        }
-
-        if (Input.GetKeyDown(KeyCode.D) && rightTarget)
-        {
-            targetTR = rightTarget;
-            downTarget = null;
-            leftTarget = null;
-            upTarget = null;
-
-            CuentaDeMovs();
-        }
-
-        //El MoveTowards me pide una posición inicial, una posición final y una velocidad, en ese orden
-        transform.position = Vector3.MoveTowards(transform.position, targetTR.position, step);
     }
 
     //Esta función es medio inútil, solo recordé que para los botones había que seleccionar una función del script que le tirás, y lo confundí con lo que realmente tenía que hacer
@@ -130,6 +140,14 @@ public class PlayerController : MonoBehaviour
         }
 
         //Por alguna razón si pongo el "cling.Play();" en el script de la moneda, no toma en cuenta la colisión y no hace que desaparezca la coin ni se instancien las "partículas"
+    }
+
+    void OnCollisionExit()
+    {
+        upTarget = null;
+        downTarget = null;
+        rightTarget = null;
+        leftTarget = null;
     }
 
     //void OnTriggerExit(Collider other) - Idea descartada
