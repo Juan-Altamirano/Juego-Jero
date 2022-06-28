@@ -25,8 +25,6 @@ public class CoinMan : MonoBehaviour
             PlayerController pc = col.gameObject.GetComponent<PlayerController>();
             pc.CoinAmount++;
 
-            prefab.transform.position = Pos + new Vector3 (0, 1, 0);
-
             for (int i = 1; i < 7; i++)
             {
                 clon = Instantiate(prefab);

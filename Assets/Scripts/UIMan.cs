@@ -7,16 +7,20 @@ public class UIMan : MonoBehaviour
 {
     public Text txt_time;
 
-    public string tiemppoo;
+    float NotFlooredTime;
+    string tiemppoo;
 
     void Start()
     {
-        tiemppoo = Mathf.FloorToInt(Time.time).ToString();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        txt_time.text = "Tiempo tardado: " + tiemppoo;
+        tiemppoo = Mathf.Floor(Time.time).ToString();
+        txt_time.text = tiemppoo;
+
+        NotFlooredTime = Time.time;
     }
 }
