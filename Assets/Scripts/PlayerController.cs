@@ -150,6 +150,11 @@ public class PlayerController : MonoBehaviour
         leftTarget = null;
     }
 
+    public void CoinSave()
+    {
+        PlayerPrefs.SetInt("Coins",CoinAmount);
+    }
+
     //void OnTriggerExit(Collider other) - Idea descartada
     //{
     //    TargetManager tm = other.gameObject.GetComponent<TargetManager>();

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -292,6 +292,11 @@ PrefabInstance:
         type: 3}
       propertyPath: movs
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047000516913041701, guid: 3008d26022a3ec646a90982eaf7ea2a3,
+        type: 3}
+      propertyPath: MovSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9047000516913041702, guid: 3008d26022a3ec646a90982eaf7ea2a3,
         type: 3}
@@ -3075,6 +3080,11 @@ PrefabInstance:
       propertyPath: leftTarget
       value: 
       objectReference: {fileID: 1683719582}
+    - target: {fileID: 8300765451465222152, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: upTarget
+      value: 
+      objectReference: {fileID: 1231347840}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7985ad463af50a459e92f447ead4259, type: 3}
 --- !u!4 &1181013300 stripped
@@ -3173,6 +3183,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
     type: 3}
   m_PrefabInstance: {fileID: 1131391956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1231347840 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3660114564705090607, guid: c7985ad463af50a459e92f447ead4259,
+    type: 3}
+  m_PrefabInstance: {fileID: 639164127}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1269517801
 GameObject:
@@ -3880,7 +3896,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534754160}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -4564,6 +4580,11 @@ PrefabInstance:
       propertyPath: downTarget
       value: 
       objectReference: {fileID: 163551899}
+    - target: {fileID: 8300765451465222152, guid: c7985ad463af50a459e92f447ead4259,
+        type: 3}
+      propertyPath: leftTarget
+      value: 
+      objectReference: {fileID: 1376824541}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7985ad463af50a459e92f447ead4259, type: 3}
 --- !u!1001 &1743580344
